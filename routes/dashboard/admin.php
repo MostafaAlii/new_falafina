@@ -18,13 +18,16 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
     Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('admins', Dashboard\AdminController::class);
+        Route::controller(Dashboard\MainSettingsController::class)->prefix('mainSettings')->as('mainSettings.')->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::post('/store', 'store')->name('store');
+        });
         Route::resource('categories', Dashboard\CategoryController::class);
         Route::resource('sizes', Dashboard\SizeController::class);
         Route::resource('item_types', Dashboard\ItemTypeController::class);
         Route::resource('items', Dashboard\ItemController::class);
         Route::resource('products', Dashboard\ProductController::class);
         Route::resource('branches', Dashboard\BranchController::class);
-
         Route::get('dashboard', Dashboard\DashboardController::class)->name('dashboard');
     });
 });

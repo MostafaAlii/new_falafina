@@ -13,7 +13,7 @@ class UserProfile extends Model
 
     protected $table = 'user_profiles';
 
-    protected $fillable = ['name', 'bio', 'user_id', 'uuid', 'phone', 'address'];
+    protected $fillable = ['name', 'bio', 'user_id', 'uuid', 'phone', 'address', 'street', 'area', 'city'];
 
     public function owner(): BelongsTo
     {

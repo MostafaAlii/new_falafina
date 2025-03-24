@@ -12,7 +12,7 @@
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="#" class="d-lg-none">
-                <img alt="Logo" src="{{ asset ('dashboard/assets/media/logos/logo-demo13-compact.svg') }}"
+                <img alt="Logo" src="{{ $logo['original'] ?? asset('dashboard/assets/media/logos/logo-demo13-compact.svg') }}"
                     class="h-25px" />
             </a>
         </div>

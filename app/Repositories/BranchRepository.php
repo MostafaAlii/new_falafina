@@ -25,13 +25,16 @@ class BranchRepository implements BranchInterface
             'name' => 'required|string|max:255',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
+            'address' => 'nullable|string',
+            'phone' => 'nullable|string',
         ]);
         Branch::create([
             'name' => $request->name,
             'latitude' => $request->latitude,
             'longitude' => $request->longitude,
+            'address' => $request->address,
+            'phone' => $request->phone,
         ]);
-
         return redirect()->route('admin.branches.index')->with('success', 'تم حفظ الفرع بنجاح!');
     }
 }

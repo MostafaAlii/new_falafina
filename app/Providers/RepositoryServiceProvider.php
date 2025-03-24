@@ -44,6 +44,10 @@ class RepositoryServiceProvider extends ServiceProvider
             'App\Services\Contracts\BranchInterface',
             'App\Repositories\BranchRepository'
         );
+        $this->app->bind(
+            'App\Services\Contracts\MainSettingInterface',
+            'App\Repositories\MainSettingRepository'
+        );
     }
 
     /**

@@ -31,10 +31,7 @@ class BranchDataTable extends BaseDataTable
             ->editColumn('status', function (Branch $branch) {
                 return $this->formatStatus($branch->status);
             })
-            ->editColumn('address', function (Branch $branch) {
-                return $branch->address ?: 'لم يتم العثور على عنوان';
-            })
-            ->rawColumns(['action', 'created_at', 'updated_at', 'status', 'address']);
+            ->rawColumns(['action', 'created_at', 'updated_at', 'status']);
     }
 
     public function query(): QueryBuilder
@@ -48,6 +45,7 @@ class BranchDataTable extends BaseDataTable
             ['name' => 'id', 'data' => 'id', 'title' => '#', 'orderable' => false, 'searchable' => false],
             ['name' => 'name', 'data' => 'name', 'title' => trans('dashboard/admin.name')],
             ['name' => 'address', 'data' => 'address', 'title' => 'العنوان', 'searchable' => false],
+            ['name' => 'phone', 'data' => 'phone', 'title' => 'الهاتف', 'searchable' => false],
             ['name' => 'status', 'data' => 'status', 'title' => trans('dashboard/general.status')],
             ['name' => 'created_at', 'data' => 'created_at', 'title' => trans('dashboard/general.created_at'), 'orderable' => false, 'searchable' => false],
             ['name' => 'updated_at', 'data' => 'updated_at', 'title' => trans('dashboard/general.updated_at'), 'orderable' => false, 'searchable' => false],

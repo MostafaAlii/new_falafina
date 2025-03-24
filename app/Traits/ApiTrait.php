@@ -8,12 +8,7 @@ trait ApiTrait {
             'status' => 'success',
             'message' => $message,
             'data' => $data,
-            'pagination' => [
-                'current_page' => $data->currentPage(),
-                'last_page' => $data->lastPage(),
-                'per_page' => $data->perPage(),
-                'total' => $data->total(),
-            ]
+            
         ], $statusCode);
     }
 

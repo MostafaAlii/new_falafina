@@ -6,8 +6,8 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="../../demo13/dist/index.html">
-            <img alt="Logo" src="{{asset('dashboard/assets/media/logos/logo-demo13.svg')}}" class="h-15px logo" />
+        <a href="{{route('admin.dashboard')}}">
+            <img alt="{{$settings?->name}}" src="{{ $logo['original'] ?? asset('dashboard/assets/media/logos/logo-demo13-compact.svg') }}" class="h-55px logo" />
         </a>
         <!--end::Logo-->
         <!--begin::Aside toggler-->

@@ -152,6 +152,9 @@ trait UploadMedia {
     }
 
     public function getMediaUrls($baseFolder, $model, ?string $column = null, ?string $relation = null, ?string $collectionName = null) {
+        if (!$model) {
+            return [];
+        }
         $base = "$baseFolder/uploads/" . class_basename($model);
         $images = [];
         if ($column && in_array($column, $model->getFillable())) {

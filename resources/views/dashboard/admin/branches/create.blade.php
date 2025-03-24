@@ -40,6 +40,7 @@
                     </div>
                     <input type="hidden" id="latitude" name="latitude">
                     <input type="hidden" id="longitude" name="longitude">
+                    <input type="hidden" id="address" name="address">
                     <div class="mt-4" style="width: 100%; max-width: 100%; height: 400px; overflow: hidden; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
                         <div id="map" style="width: 100%; height: 100px;"></div>
                     </div>
@@ -53,50 +54,6 @@
 @push('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-{{--<script>
-    var map = L.map('map').setView([30.0444, 31.2357], 7); // القاهرة كموقع افتراضي
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    var marker = L.marker([30.0444, 31.2357], {draggable: true}).addTo(map);
-
-    function updateLatLng(lat, lng) {
-        document.getElementById('latitude').value = lat;
-        document.getElementById('longitude').value = lng;
-    }
-
-    marker.on('dragend', function(event) {
-        var position = marker.getLatLng();
-        updateLatLng(position.lat, position.lng);
-    });
-
-    map.on('click', function(event) {
-        var lat = event.latlng.lat;
-        var lng = event.latlng.lng;
-        marker.setLatLng([lat, lng]);
-        updateLatLng(lat, lng);
-    });
-
-    // البحث عن موقع وتحريك العلامة تلقائيًا
-    document.getElementById('search').addEventListener('change', function() {
-        var location = this.value;
-        fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${location}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.length > 0) {
-                    var lat = data[0].lat;
-                    var lng = data[0].lon;
-                    marker.setLatLng([lat, lng]);
-                    map.setView([lat, lng], 15);
-                    updateLatLng(lat, lng);
-                } else {
-                    alert("لم يتم العثور على الموقع");
-                }
-            });
-    });
-</script>--}}
 <script>
     var map = L.map('map').setView([30.0444, 31.2357], 7);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -136,8 +93,10 @@
             .then(data => {
                 if (data.display_name) {
                     document.getElementById('search').value = data.display_name;
+                    document.getElementById('address').value = data.display_name;
                 } else {
                     document.getElementById('search').value = "لم يتم العثور على عنوان";
+                    document.getElementById('address').value = "";
                 }
             })
             .catch(error => console.error('خطأ في جلب العنوان:', error));
