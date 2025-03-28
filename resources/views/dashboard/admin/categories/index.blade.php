@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageTitle')
-    {{ trans('dashboard/admin.category.categories') }}
+    {{$pageTitle}}
 @endsection
 
 @section('content')
@@ -15,8 +15,8 @@
             <!--begin::Header-->
             <div class="pt-5 border-0 card-header">
                 <h3 class="card-title align-items-start flex-column">
-                    <span class="mb-1 card-label fw-bolder fs-3">{{ trans('dashboard/admin.category.categories') }}</span>
-                    <span class="mt-1 text-muted fw-bold fs-7">{{ trans('dashboard/admin.category.categories') }} ( {{ App\Models\Category::count() }} )</span>
+                    <span class="mb-1 card-label fw-bolder fs-3">{{$pageTitle}}</span>
+                    <span class="mt-1 text-muted fw-bold fs-7">{{$pageTitle}} ( {{ App\Models\Category::count() }} )</span>
                     <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
                         <a href="{{ route('admin.categories.create') }}" class="btn btn-sm btn-light btn-active-primary">
                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
@@ -26,7 +26,8 @@
                                     <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->{{ trans('dashboard/admin.category.add_new_category') }}
+                            <!--end::Svg Icon-->
+                            اضافه تصنيف جديد
                         </a>
                     </div>
                 </h3>

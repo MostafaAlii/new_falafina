@@ -15,6 +15,8 @@ class Setting extends Model {
         'phone',
         'address',
         'status',
+        'currency',
+        'loyalty_points'
     ];
 
     public function media() {

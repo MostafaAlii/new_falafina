@@ -42,6 +42,73 @@
         </div>
     </div>
 </div>
+<!-- Sliders -->
+<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.sliders.*') }}">
+    <span class="menu-link {{ is_active('admin.sliders.*') }}">
+        <span class="menu-icon"><i class="bi bi-list fs-2"></i></span>
+        <span class="menu-title">الصور المتحركه</span>
+        <span class="menu-arrow"></span>
+    </span>
+    <div class="menu-sub menu-sub-accordion menu-active-bg">
+        <div class="menu-item">
+            <a class="menu-link {{ is_active('admin.sliders.index') }}" href="{{ route('admin.sliders.index') }}">
+                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                <span class="menu-title">الصور المتحركه</span>
+            </a>
+        </div>
+        <div class="menu-item">
+            <a class="menu-link {{ is_active('admin.sliders.create') }}" href="{{ route('admin.sliders.create') }}">
+                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                <span class="menu-title">إضافة صوره</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Addons Menu -->
+<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.extras.*') }}">
+    <span class="menu-link {{ is_active('admin.extras.*') }}">
+        <span class="menu-icon"><i class="bi bi-list fs-2"></i></span>
+        <span class="menu-title">الاضافات و الصوصات</span>
+        <span class="menu-arrow"></span>
+    </span>
+    <div class="menu-sub menu-sub-accordion menu-active-bg">
+        <div class="menu-item">
+            <a class="menu-link {{ is_active('admin.extras.index') }}" href="{{ route('admin.extras.index') }}">
+                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                <span class="menu-title">الاضافات و الصوصات</span>
+            </a>
+        </div>
+        <div class="menu-item">
+            <a class="menu-link {{ is_active('admin.extras.create') }}" href="{{ route('admin.extras.create') }}">
+                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                <span class="menu-title">إضافة صوص او اضافه</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Types Menu -->
+<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.types.*') }}">
+    <span class="menu-link {{ is_active('admin.types.*') }}">
+        <span class="menu-icon"><i class="bi bi-list fs-2"></i></span>
+            <span class="menu-title">الانواع</span>
+        <span class="menu-arrow"></span>
+    </span>
+    <div class="menu-sub menu-sub-accordion menu-active-bg">
+        <div class="menu-item">
+            <a class="menu-link {{ is_active('admin.types.index') }}" href="{{ route('admin.types.index') }}">
+                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                <span class="menu-title">الانواع</span>
+            </a>
+        </div>
+        <div class="menu-item">
+            <a class="menu-link {{ is_active('admin.types.create') }}" href="{{ route('admin.types.create') }}">
+                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                <span class="menu-title">إضافة نوع</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Types Menu -->
 <!-- Branches Menu -->
 <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.branches.*') }}">
     <span class="menu-link {{ is_active('admin.branches.*') }}">
@@ -69,93 +136,47 @@
 <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.categories.*') }}">
     <span class="menu-link {{ is_active('admin.categories.*') }}">
         <span class="menu-icon"><i class="bi bi-list fs-2"></i></span>
-        <span class="menu-title">{{ trans('dashboard/admin.category.categories') }}</span>
+        <span class="menu-title">التصنيفات</span>
         <span class="menu-arrow"></span>
     </span>
     <div class="menu-sub menu-sub-accordion menu-active-bg">
         <div class="menu-item">
             <a class="menu-link {{ is_active('admin.categories.index') }}" href="{{ route('admin.categories.index') }}">
                 <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                <span class="menu-title">{{ trans('dashboard/admin.category.categories') }}</span>
+                <span class="menu-title">التصنيفات</span>
             </a>
         </div>
         <div class="menu-item">
             <a class="menu-link {{ is_active('admin.categories.create') }}" href="{{ route('admin.categories.create') }}">
                 <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                <span class="menu-title">{{ trans('dashboard/admin.category.create_category') }}</span>
+                <span class="menu-title">إضافة تصنيف</span>
             </a>
         </div>
     </div>
 </div>
 
 <!-- Sizes Menu -->
-<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.sizes.*') }}">
+{{--<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.sizes.*') }}">
     <span class="menu-link {{ is_active('admin.sizes.*') }}">
         <span class="menu-icon"><i class="bi bi-rulers fs-2"></i></span>
-        <span class="menu-title">{{ trans('dashboard/admin.size.sizes') }}</span>
+        <span class="menu-title">السمات</span>
         <span class="menu-arrow"></span>
     </span>
     <div class="menu-sub menu-sub-accordion menu-active-bg">
         <div class="menu-item">
             <a class="menu-link {{ is_active('admin.sizes.index') }}" href="{{ route('admin.sizes.index') }}">
                 <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                <span class="menu-title">{{ trans('dashboard/admin.size.sizes') }}</span>
+                <span class="menu-title">السمات</span>
             </a>
         </div>
         <div class="menu-item">
             <a class="menu-link {{ is_active('admin.sizes.create') }}" href="{{ route('admin.sizes.create') }}">
                 <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                <span class="menu-title">{{ trans('dashboard/admin.size.create_size') }}</span>
+                <span class="menu-title">اضافه سمه</span>
             </a>
         </div>
     </div>
-</div>
-
-<!-- Item Types Menu -->
-<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.item_types.*') }}">
-    <span class="menu-link {{ is_active('admin.item_types.*') }}">
-        <span class="menu-icon"><i class="bi bi-box fs-2"></i></span>
-        <span class="menu-title">{{ trans('dashboard/admin.item_type.item_types') }}</span>
-        <span class="menu-arrow"></span>
-    </span>
-    <div class="menu-sub menu-sub-accordion menu-active-bg">
-        <div class="menu-item">
-            <a class="menu-link {{ is_active('admin.item_types.index') }}" href="{{ route('admin.item_types.index') }}">
-                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                <span class="menu-title">{{ trans('dashboard/admin.item_type.item_types') }}</span>
-            </a>
-        </div>
-        <div class="menu-item">
-            <a class="menu-link {{ is_active('admin.item_types.create') }}" href="{{ route('admin.item_types.create') }}">
-                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                <span class="menu-title">{{ trans('dashboard/admin.item_type.create_item_type') }}</span>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Items Menu -->
-<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.items.*') }}">
-    <span class="menu-link {{ is_active('admin.items.*') }}">
-        <span class="menu-icon"><i class="bi bi-box-seam fs-2"></i></span> <!-- Icon for items -->
-        <span class="menu-title">{{ trans('dashboard/admin.item.items') }}</span>
-        <span class="menu-arrow"></span>
-    </span>
-    <div class="menu-sub menu-sub-accordion menu-active-bg">
-        <div class="menu-item">
-            <a class="menu-link {{ is_active('admin.items.index') }}" href="{{ route('admin.items.index') }}">
-                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                <span class="menu-title">{{ trans('dashboard/admin.item.items') }}</span>
-            </a>
-        </div>
-        <div class="menu-item">
-            <a class="menu-link {{ is_active('admin.items.create') }}" href="{{ route('admin.items.create') }}">
-                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                <span class="menu-title">{{ trans('dashboard/admin.item.create_item') }}</span>
-            </a>
-        </div>
-    </div>
-</div>
+</div>--}}
 
 <!-- Products Menu -->
 <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.products.*') }}">

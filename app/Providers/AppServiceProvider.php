@@ -16,8 +16,8 @@ class AppServiceProvider extends ServiceProvider {
         $settings = Cache::rememberForever('settings', function () {
             return Setting::with(['media'])->first() ?? new Setting();
         });
-        $logo = $this->getMediaUrls('dashboard', $settings, null, 'media', 'logo') ?? null;
-        $favicon = $this->getMediaUrls('dashboard', $settings, null, 'media', 'favicon') ?? null;
+        $logo = $settings->getMediaUrl('logo') ?? null;
+        $favicon = $settings->getMediaUrl('favicon') ?? null;
         View::share([
             'settings' => $settings,
             'logo' => $logo,

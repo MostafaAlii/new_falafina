@@ -12,7 +12,8 @@
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="#" class="d-lg-none">
-                <img alt="Logo" src="{{ $logo['original'] ?? asset('dashboard/assets/media/logos/logo-demo13-compact.svg') }}"
+                <img alt="Logo"
+                    src="{{ $logo['original'] ?? asset('dashboard/assets/media/logos/logo-demo13-compact.svg') }}"
                     class="h-25px" />
             </a>
         </div>
@@ -32,8 +33,8 @@
                         id="#kt_header_menu" data-kt-menu="true">
                         <!-- Start Dashboard Link -->
                         <div class="menu-item me-lg-1">
-                            <a class="menu-link active py-3" href="#">
-                                <span class="menu-title">Dashboard</span>
+                            <a class="menu-link active py-3" href="{{ route('admin.dashboard') }}">
+                                <span class="menu-title">الرئيسيه - لوحه التحكم</span>
                             </a>
                         </div>
                         <!-- End Dashboard Link -->
@@ -54,7 +55,7 @@
                         <!--begin::Menu wrapper-->
                         <!-- default is bottom-end in english but in arabic will be as bottom-start -->
                         <div class="topbar-item position-relative px-3 px-lg-5" data-kt-menu-trigger="click"
-                            data-kt-menu-attach="parent" data-kt-menu-placement="{{bottomEndDirectionClass()}}"
+                            data-kt-menu-attach="parent" data-kt-menu-placement="{{ bottomEndDirectionClass() }}"
                             data-kt-menu-flip="bottom">
                             <i class="bi bi-app-indicator fs-3"></i>
                         </div>
@@ -62,8 +63,7 @@
                         <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true">
                             <!--begin::Heading-->
                             <div class="d-flex flex-column bgi-no-repeat rounded-top"
-                                style="background-image:url('{{ asset("dashboard/assets/media/misc/pattern-1.jpg")
-                                }}')">
+                                style="background-image:url('{{ asset('dashboard/assets/media/misc/pattern-1.jpg') }}')">
                                 <!--begin::Title-->
                                 <h3 class="text-white fw-bold px-9 mt-10 mb-6">Notifications
                                     <span class="fs-8 opacity-75 ps-3">24 reports</span>
@@ -141,8 +141,9 @@
                                             <span class="svg-icon svg-icon-5">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
-                                                        transform="rotate(-180 18 13)" fill="black" />
+                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2"
+                                                        rx="1" transform="rotate(-180 18 13)"
+                                                        fill="black" />
                                                     <path
                                                         d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                                         fill="black" />
@@ -155,7 +156,8 @@
                                 </div>
                                 <!--end::Tab panel Alert Notification Panel-->
                                 <!--begin::Tab panel Updates Notification Panel-->
-                                <div class="tab-pane fade show active" id="kt_topbar_notifications_2" role="tabpanel">
+                                <div class="tab-pane fade show active" id="kt_topbar_notifications_2"
+                                    role="tabpanel">
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column px-9">
                                         <!--begin::Section-->
@@ -169,7 +171,8 @@
                                             <!--end::Text-->
                                             <!--begin::Action-->
                                             <div class="text-center mt-5 mb-9">
-                                                <a href="#" class="btn btn-sm btn-primary px-6" data-bs-toggle="modal"
+                                                <a href="#" class="btn btn-sm btn-primary px-6"
+                                                    data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_upgrade_plan">Upgrade</a>
                                             </div>
                                             <!--end::Action-->
@@ -177,8 +180,9 @@
                                         <!--end::Section-->
                                         <!--begin::Illustration-->
                                         <div class="text-center px-4">
-                                            <img class="mw-100 mh-200px" alt="image" src="{{ asset("
-                                                assets/dashboard/media/illustrations/unitedpalms-1/1.png") }}" />
+                                            <img class="mw-100 mh-200px" alt="image"
+                                                src="{{ asset("
+                                                                                                                                                assets/dashboard/media/illustrations/unitedpalms-1/1.png") }}" />
                                         </div>
                                         <!--end::Illustration-->
                                     </div>
@@ -197,7 +201,8 @@
                                                 <span class="w-70px badge badge-light-success me-4">200 OK</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">Payment
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">Payment
                                                     process</a>
                                                 <!--end::Title-->
                                             </div>
@@ -217,8 +222,9 @@
                                             <span class="svg-icon svg-icon-5">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
-                                                        transform="rotate(-180 18 13)" fill="black" />
+                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2"
+                                                        rx="1" transform="rotate(-180 18 13)"
+                                                        fill="black" />
                                                     <path
                                                         d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                                         fill="black" />

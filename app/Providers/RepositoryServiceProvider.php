@@ -21,9 +21,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind('AdminService', function () {
             return new AdminService;
         });
-        $this->app->bind('CategoryService', function () {
-            return new CategoryService;
-        });
         $this->app->bind('SizeService', function () {
             return new SizeService;
         });
@@ -47,6 +44,22 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Services\Contracts\MainSettingInterface',
             'App\Repositories\MainSettingRepository'
+        );
+        $this->app->bind(
+            'App\Services\Contracts\SliderInterface',
+            'App\Repositories\SliderRepository'
+        );
+        $this->app->bind(
+            'App\Services\Contracts\ExtraInterface',
+            'App\Repositories\ExtraRepository'
+        );
+        $this->app->bind(
+            'App\Services\Contracts\TypeInterface',
+            'App\Repositories\TypeRepository'
+        );
+        $this->app->bind(
+            'App\Services\Contracts\CategoryInterface',
+            'App\Repositories\CategoryRepository'
         );
     }
 

@@ -2,51 +2,46 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\DataTables\Dashboard\Admin\CategoryDataTable;
-use App\Dto\CategoryDto;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryRequests\CreateRequest;
-use App\Services\Facades\CategoryFacade;
+use Illuminate\Http\Request;
+use App\DataTables\Dashboard\Admin\CategoryDataTable;
+use App\Services\Contracts\CategoryInterface;
+use App\Models\Category;
 
-class CategoryController extends Controller
-{
+class CategoryController extends Controller {
+    public function __construct(protected CategoryDataTable $categoryDataTable, protected CategoryInterface $categoryInterface)
+    {
+        $this->categoryInterface = $categoryInterface;
+        $this->categoryDataTable = $categoryDataTable;
+    }
+
     public function index(CategoryDataTable $categoryDataTable)
     {
-        return CategoryFacade::index($categoryDataTable);
+        return $this->categoryInterface->index($this->categoryDataTable);
     }
 
     public function create()
     {
-        return view('dashboard.admin.categories.create', ['pageTitle' => trans('dashboard/category.categories')]);
+        return $this->categoryInterface->create();
     }
 
-    public function store(CreateRequest $request)
+    public function store(Request $request)
     {
-        $categoryDto = CategoryDto::create($request);
-        CategoryFacade::store($categoryDto);
-
-        return redirect()->route('admin.categories.index')->with('success', trans('dashboard/general.create_success'));
+        return $this->categoryInterface->store($request);
     }
 
-    public function edit($id)
+    public function edit(Category $category)
     {
-        $category = CategoryFacade::find($id);
-
-        return view('dashboard.admin.categories.edit', compact('category'));
+        return $this->categoryInterface->edit($category);
     }
 
-    public function update(CreateRequest $request, $id)
+    public function update(Request $request, Category $category)
     {
-        $categoryDto = CategoryDto::create($request);
-        CategoryFacade::update($categoryDto, $id);
-
-        return redirect()->route('admin.categories.index')->with('success', trans('dashboard/general.update_success'));
+        return $this->categoryInterface->update($request, $category);
     }
 
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        CategoryFacade::destroy($id);
-
-        return redirect()->route('admin.categories.index')->with('success', trans('dashboard/general.delete_success'));
+        return $this->categoryInterface->destroy($category);
     }
 }

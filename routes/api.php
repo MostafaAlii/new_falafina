@@ -44,7 +44,16 @@ Route::prefix('v1')->group(function () {
             Route::post('me', [Auth\AuthController::class, 'me']);
         });*/
     });
-    Route::prefix('items')->group(function () {
-        Route::get('/', [Api\ItemController::class, 'index']);
+    Route::prefix('settings')->group(function () {
+        Route::get('/', [Api\MainSettingController::class, 'index']);
+    });
+    Route::prefix('sliders')->group(function () {
+        Route::get('/', [Api\SliderController::class, 'index']);
+    });
+    Route::prefix('extras')->group(function () {
+        Route::post('/', [Api\ExtraController::class, 'index']);
+    });
+    Route::prefix('categories')->group(function () {
+        Route::post('/', [Api\CategoryController::class, 'index']);
     });
 });

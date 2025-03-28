@@ -216,5 +216,8 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Admin' => App\Models\Admin::class,
         'Branch' => App\Models\Branch::class,
+        'Slider' => App\Models\Slider::class,
+        'Extra' => App\Models\Extra::class,
+        'Type' => App\Models\Type::class,
     ])->toArray(),
 ];

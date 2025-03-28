@@ -14,20 +14,14 @@ class MainSettingRepository implements MainSettingInterface {
     use UploadMedia;
     public function index() {
         $setting = Setting::with(['media'])->orderBy('created_at', 'DESC')->first();
-        $logo = $setting ? $this->getMediaUrls('dashboard', $setting, null, 'media', 'logo') : null;
-        //$logo = $this->getMediaUrls('dashboard', $setting, null, 'media', 'logo') ?? null;
-        $favicon = $setting ? $this->getMediaUrls('dashboard', $setting, null, 'media', 'favicon') : null;
         return view('dashboard.admin.settings.index', [
             'title' => 'General Main Settings',
             'setting' => $setting,
-            'logo' => $logo,
-            'favicon' => $favicon,
         ]);
     }
 
 
-    public function save(MainSettingRequest $request)
-    {
+    public function save(MainSettingRequest $request) {
         try {
             $setting = Setting::firstOrNew([]);
             $setting->fill($request->only([
@@ -35,18 +29,16 @@ class MainSettingRepository implements MainSettingInterface {
                 'name',
                 'description',
                 'phone',
-                'address'
+                'address',
+                'currency',
+                'loyalty_points'
             ]));
             $setting->save();
 
             if ($request->hasFile('logo'))
-                $this->updateSingleMedia('dashboard', $request->file('logo'), $setting, null, 'media', true, true, 'logo', false);
-
+                $setting->updateMedia($request->file('logo'), 'logo', 'root');
             if ($request->hasFile('favicon'))
-                $this->updateSingleMedia('dashboard', $request->file('favicon'), $setting, null, 'media', true, false, 'favicon', false);
-
-            if ($request->hasFile('banner'))
-                $this->updateSingleMedia('dashboard', $request->file('banner'), $setting, null, 'media', true, false, 'banner', false);
+                $setting->updateMedia($request->file('favicon'), 'favicon', 'root');
             return redirect()->back()->with('success', 'تم تحديث الإعدادات بنجاح.');
             Cache::forget('settings');
         } catch (\Exception $e) {

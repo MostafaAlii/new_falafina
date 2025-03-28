@@ -30,8 +30,10 @@ License: For each use you must have a valid license purchased only from above li
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="{{$settings?->name}}" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="{{$favicon['original'] ?? asset('dashboard/assets/media/logos/logo-demo13-compact.svg')}}" />
+    <link rel="shortcut icon" href="{{$favicon ?? asset('dashboard/assets/media/logos/logo-demo13-compact.svg')}}" />
     <!--begin::Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cairo:300,400&amp;subset=arabic,latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
@@ -54,7 +56,7 @@ License: For each use you must have a valid license purchased only from above li
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
     <style>
         html, body, a, i, p, h1, h2, h3, h4, h5, h6, table, .btn, .alert, .dt-button {
-            font-family: 'Cairo', sans-serif;
+            font-family: "IBM Plex Sans Arabic", sans-serif;
         }
     </style>
     @stack('css')

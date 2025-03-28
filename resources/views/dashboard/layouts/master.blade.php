@@ -34,9 +34,9 @@
     <!--end::Page-->
 </div>
 <!--end::Root-->
-@include('dashboard.layouts.common.includes.drawers.activities')
+{{--@include('dashboard.layouts.common.includes.drawers.activities')
 @include('dashboard.layouts.common.includes.drawers.chat')
 @include('dashboard.layouts.common.includes.drawers.explore')
-@include('dashboard.layouts.common.includes.drawers._create_app')
+@include('dashboard.layouts.common.includes.drawers._create_app')--}}
 
 @include('dashboard.layouts.common.includes._tpl_end')
